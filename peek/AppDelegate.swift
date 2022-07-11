@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,12 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootVC = UnauthorizedViewController()
-                
-        let rootNC = UINavigationController(rootViewController: rootVC)
-        window?.rootViewController = rootNC
+        
+        let unauthorizedPage = UnauthorizedViewController()
+        let authorizedPage = AuthorizedViewController()
+        
+        let appCoordinator = AppCoordinator(
+            unauthorizedPage: unauthorizedPage,
+            authorizedPage: authorizedPage,
+            appDelegate: self
+        )
+        
+        unauthorizedPage.appCoordinator = appCoordinator
+        authorizedPage.appCoordinator = appCoordinator
+        
+        let entranceViewController = LogoViewController()
+        window?.rootViewController = entranceViewController
         window?.makeKeyAndVisible()
         
         return true
@@ -28,3 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate: EntrancePage {
+    func setEntrancePage(with viewController: UIViewController) {
+//        let rootNavigationController = UINavigationController(rootViewController: viewController)
+//        window?.rootViewController = rootNavigationController
+        
+        
+        print("Some shit")
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [viewController]
+        window?.rootViewController = navigationController
+    }
+}
