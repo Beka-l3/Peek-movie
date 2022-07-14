@@ -18,9 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        let entranceViewController = LogoViewController()
+        window?.rootViewController = entranceViewController
+        window?.makeKeyAndVisible()
         
-        let unauthorizedPage = UnauthorizedViewController()
-        let authorizedPage = AuthorizedViewController()
+        let loginPage = LoginViewController()
+        let registrationPage = RegistrationViewController()
+        let unauthorizedPage = UnauthorizedViewController(loginPage: loginPage, registrationPage: registrationPage)
+        
+        let joinRoomPage = JoinRoomViewController()
+        let createRoomPage = CreateRoomViewController()
+        let authorizedPage = AuthorizedViewController(joinRoomPage: joinRoomPage, createRoomPage: createRoomPage)
+        
         
         let appCoordinator = AppCoordinator(
             unauthorizedPage: unauthorizedPage,
@@ -28,12 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appDelegate: self
         )
         
-        unauthorizedPage.appCoordinator = appCoordinator
-        authorizedPage.appCoordinator = appCoordinator
         
-        let entranceViewController = LogoViewController()
-        window?.rootViewController = entranceViewController
-        window?.makeKeyAndVisible()
+        loginPage.appCoordinator = appCoordinator
+        registrationPage.appCoordinator = appCoordinator
+        unauthorizedPage.appCoordinator = appCoordinator
+        
+        joinRoomPage.appCoordinator = appCoordinator
+        createRoomPage.appCoordinator = appCoordinator
+        authorizedPage.appCoordinator = appCoordinator
         
         return true
     }
@@ -43,13 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: EntrancePage {
     func setEntrancePage(with viewController: UIViewController) {
-//        let rootNavigationController = UINavigationController(rootViewController: viewController)
-//        window?.rootViewController = rootNavigationController
+        let rootNavigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = rootNavigationController
         
-        
-        print("Some shit")
-        let navigationController = UINavigationController()
-        navigationController.viewControllers = [viewController]
-        window?.rootViewController = navigationController
+//        let navigationController = UINavigationController()
+//        navigationController.viewControllers = [viewController]
+//        window?.rootViewController = navigationController
     }
 }

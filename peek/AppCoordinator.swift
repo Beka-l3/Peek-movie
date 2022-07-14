@@ -35,13 +35,9 @@ final class AppCoordinator {
             return
         }
         
-        
-        print("aaaa")
-        if true {
-            print("bbb")
+        if false {
             appDelegate.setEntrancePage(with: unauthorizedPage)
         } else {
-            print("ccc")
             appDelegate.setEntrancePage(with: authorizedPage)
         }
     }

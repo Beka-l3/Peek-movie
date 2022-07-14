@@ -7,9 +7,29 @@
 
 import UIKit
 
+struct ConstraintConstants {
+    static let logoDistanceFromCenter: CGFloat = -176
+    static let logoSize: CGFloat = 200
+    
+    static let buttonHeight: CGFloat = 48
+    static let buttonLeadingAnchors: CGFloat = 32
+    static let buttonTrailingAnchors: CGFloat = -32
+    
+    static let primaryButtonDisatnceFromCenter: CGFloat = 192
+    static let secondaryButtonDistanceFromPrimary: CGFloat = 16
+    
+    
+    static let inputFieldHeight: CGFloat = 48
+    static let inputFieldLeadingAnchor: CGFloat = 32
+    static let inputFieldTrailingAnchor: CGFloat = -32
+    static let inputFieldDistanceFromCenter: CGFloat = -56
+    static let distanceBetweenInputFields: CGFloat = 16
+}
+
 struct ColorPalette {
     static var customWhite: UIColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
     static var customYellow: UIColor = UIColor(red: 0.96, green: 0.98, blue: 0.098, alpha: 1)
+    static var customBlack = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1)
 }
 
 
@@ -23,7 +43,6 @@ struct LogoImage {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }
-    
 }
 
 
@@ -61,6 +80,26 @@ struct Buttons {
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }
-    
-    
+}
+
+struct InputFields {
+    static func inputField(placeholderText: String) -> UITextField {
+        let iv = UITextField()
+        iv.backgroundColor = ColorPalette.customWhite
+        iv.textColor = ColorPalette.customBlack
+        iv.tintColor = .systemPurple
+        iv.font = .systemFont(ofSize: 24)
+        iv.textAlignment = .center
+
+        let placeholder = NSAttributedString(
+            string: placeholderText,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+                
+        iv.attributedPlaceholder = placeholder
+
+        iv.layer.cornerRadius = 12.5
+
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        return iv
+    }
 }

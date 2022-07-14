@@ -19,10 +19,10 @@ class LogoViewController: UIViewController {
     private func setupViews() {
         view.addSubview(logoImageView)
         NSLayoutConstraint.activate([
-            logoImageView.heightAnchor.constraint(equalToConstant: 200),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200),
-            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -128)
+            logoImageView.heightAnchor.constraint(equalToConstant: ConstraintConstants.logoSize),
+            logoImageView.widthAnchor.constraint(equalToConstant: ConstraintConstants.logoSize),
+            logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            logoImageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.logoDistanceFromCenter)
         ])
     }
     
