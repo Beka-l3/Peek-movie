@@ -41,5 +41,4 @@ final class AppCoordinator {
             appDelegate.setEntrancePage(with: authorizedPage)
         }
     }
-    
 }

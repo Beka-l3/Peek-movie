@@ -10,7 +10,6 @@ import UIKit
 
 class CreateRoomViewController: UIViewController {
     
-    
     public weak var appCoordinator: AppCoordinator?
     
     private let idLabel: UILabel = Labels.getPrimaryLabel(texted: "ID", ofSize: 48)
@@ -51,7 +50,6 @@ class CreateRoomViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.isNavigationBarHidden = true
     }
     
@@ -75,8 +73,6 @@ class CreateRoomViewController: UIViewController {
         view.addSubview(joinedAmountLabel)
         view.addSubview(startButton)
         view.addSubview(cancleButton)
-        
-//        print(view.frame.height, view.frame.width)
         
         NSLayoutConstraint.activate([
             qrImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 64),
@@ -108,7 +104,5 @@ class CreateRoomViewController: UIViewController {
             cancleButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             cancleButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
         ])
-        
-        
     }
 }

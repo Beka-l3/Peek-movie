@@ -25,5 +25,4 @@ class LogoViewController: UIViewController {
             logoImageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.logoDistanceFromCenter)
         ])
     }
-    
 }

@@ -27,8 +27,6 @@ class AuthorizedViewController: UIViewController {
         return btn
     }()
     
-    
-    
     // MARK: - - lifecycle, override
     init(joinRoomPage: JoinRoomViewController, createRoomPage: CreateRoomViewController) {
         self.joinRoomPage = joinRoomPage
@@ -46,7 +44,6 @@ class AuthorizedViewController: UIViewController {
         view.backgroundColor = .black
         setupViews()
     }
-    
     
     // MARK: - - objc
     
@@ -87,5 +84,4 @@ class AuthorizedViewController: UIViewController {
             createButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
         ])
     }
-    
 }

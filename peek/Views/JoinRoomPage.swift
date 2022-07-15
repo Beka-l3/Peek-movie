@@ -10,7 +10,6 @@ import UIKit
 
 class JoinRoomViewController: UIViewController {
     
-    
     public weak var appCoordinator: AppCoordinator?
     private var waitingRoomPage: WaitingRoomViewController
     
@@ -23,8 +22,6 @@ class JoinRoomViewController: UIViewController {
         btn.addTarget(self, action: #selector(joinButtonPressed), for: .touchUpInside)
         return btn
     }()
-    
-    
     
     // MARK: - - lifecycle, override
     init(watingRoomPage: WaitingRoomViewController) {
@@ -84,10 +81,5 @@ class JoinRoomViewController: UIViewController {
             joinButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.primaryButtonDisatnceFromCenter),
             joinButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight),
         ])
-        
-        
     }
-    
-    
-    
 }

@@ -8,13 +8,11 @@
 import UIKit
 
 
-
 class UnauthorizedViewController: UIViewController {
     
     public weak var appCoordinator: AppCoordinator?
     private let loginPage: LoginViewController
     private let registrationPage: RegistrationViewController
-    
     
     private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
 
@@ -29,7 +27,6 @@ class UnauthorizedViewController: UIViewController {
         btn.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
         return btn
     }()
-    
     
     // MARK: - - lifecycle, override
     init(loginPage: LoginViewController, registrationPage: RegistrationViewController) {
@@ -49,8 +46,6 @@ class UnauthorizedViewController: UIViewController {
         setupViews()
     }
     
-    
-    
     // MARK: - - objc
     
     @objc private func loginButtonClicked() {
@@ -58,12 +53,10 @@ class UnauthorizedViewController: UIViewController {
         self.navigationController?.pushViewController(loginPage, animated: true)
     }
     
-    
     @objc private func registerButtonClicked() {
         print("Register clicked")
         self.navigationController?.pushViewController(registrationPage, animated: true)
     }
-    
     
     // MARK: - - func
     
@@ -91,6 +84,4 @@ class UnauthorizedViewController: UIViewController {
             registerButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
         ])
     }
-    
-    
 }

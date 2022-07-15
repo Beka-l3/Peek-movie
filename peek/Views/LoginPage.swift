@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
         return btn
     }()
     
-    
     // MARK: - - lifecycle, override
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -52,14 +51,14 @@ class LoginViewController: UIViewController {
         navigationController?.navigationBar.tintColor = ColorPalette.customYellow
     }
     
-    
     // MARK: - - objc
+    
     @objc private func loginButtonPressed() {
         print("Login pressed")
     }
     
-    
     // MARK: - - func
+    
     private func setupViews() {
         view.addSubview(logoImageView)
         view.addSubview(usernameInputField)

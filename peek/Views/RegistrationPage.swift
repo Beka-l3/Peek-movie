@@ -23,8 +23,8 @@ class RegistrationViewController: UIViewController {
         return btn
     }()
     
-    
     // MARK: - - lifecycle, override
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,14 +52,14 @@ class RegistrationViewController: UIViewController {
         navigationController?.navigationBar.tintColor = ColorPalette.customYellow
     }
     
-    
     // MARK: - - objc
+    
     @objc private func loginButtonPressed() {
         print("Register pressed")
     }
     
-    
     // MARK: - - func
+    
     private func setupViews() {
         view.addSubview(logoImageView)
         view.addSubview(usernameInputField)

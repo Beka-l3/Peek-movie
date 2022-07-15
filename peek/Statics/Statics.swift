@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 struct ConstraintConstants {
     static let logoDistanceFromCenter: CGFloat = -176
     static let logoSize: CGFloat = 200
@@ -26,6 +27,7 @@ struct ConstraintConstants {
     static let distanceBetweenInputFields: CGFloat = 16
 }
 
+
 struct ColorPalette {
     static var customWhite: UIColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
     static var customYellow: UIColor = UIColor(red: 0.96, green: 0.98, blue: 0.098, alpha: 1)
@@ -34,7 +36,6 @@ struct ColorPalette {
 
 
 struct Images {
-    
     static func getImageView(named name: String) -> UIImageView {
         let iv = UIImageView()
         iv.image = UIImage(named: name)
@@ -104,8 +105,8 @@ struct InputFields {
     }
 }
 
+
 struct Labels {
-    
     static func getPrimaryLabel(texted text: String, ofSize size: CGFloat) -> UILabel {
         let l = UILabel()
         l.text = text

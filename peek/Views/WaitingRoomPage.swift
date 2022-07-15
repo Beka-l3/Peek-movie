@@ -28,8 +28,6 @@ class WaitingRoomViewController: UIViewController {
         return btn
     }()
     
-    
-    
     // MARK: - - lifecycle, override
     init() {
         
@@ -70,7 +68,6 @@ class WaitingRoomViewController: UIViewController {
         view.addSubview(waitingLabel)
         view.addSubview(quitButton)
         
-        
         NSLayoutConstraint.activate([
             qrImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 64),
             qrImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -64),
@@ -99,6 +96,4 @@ class WaitingRoomViewController: UIViewController {
             quitButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
         ])
     }
-    
-    
 }

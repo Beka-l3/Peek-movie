@@ -8,13 +8,10 @@
 import UIKit
 
 
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     
     var window: UIWindow?
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -31,13 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let createRoomPage = CreateRoomViewController()
         let authorizedPage = AuthorizedViewController(joinRoomPage: joinRoomPage, createRoomPage: createRoomPage)
         
-        
         let appCoordinator = AppCoordinator(
             unauthorizedPage: unauthorizedPage,
             authorizedPage: authorizedPage,
             appDelegate: self
         )
-        
         
         loginPage.appCoordinator = appCoordinator
         registrationPage.appCoordinator = appCoordinator
@@ -50,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
 }
 
 
@@ -58,9 +52,5 @@ extension AppDelegate: EntrancePage {
     func setEntrancePage(with viewController: UIViewController) {
         let rootNavigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = rootNavigationController
-        
-//        let navigationController = UINavigationController()
-//        navigationController.viewControllers = [viewController]
-//        window?.rootViewController = navigationController
     }
 }
