@@ -16,7 +16,7 @@ class UnauthorizedViewController: UIViewController {
     private let registrationPage: RegistrationViewController
     
     
-    private lazy var logoImageView: UIImageView = LogoImage.getLogoImageView()
+    private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
 
     private lazy var loginButton: UIButton = {
         let btn = Buttons.getPrimaryButton(title: "Login")

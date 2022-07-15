@@ -12,7 +12,7 @@ class RegistrationViewController: UIViewController {
     
     public weak var appCoordinator: AppCoordinator?
     
-    private lazy var logoImageView: UIImageView = LogoImage.getLogoImageView()
+    private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
 
     private lazy var usernameInputField: UITextField = InputFields.inputField(placeholderText: "username")
     private lazy var passwordInputField: UITextField = InputFields.inputField(placeholderText: "password")

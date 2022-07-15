@@ -1,15 +1,14 @@
 //
-//  CreateRoomPage.swift
+//  WaitingRoomPage.swift
 //  peek
 //
-//  Created by Bekzhan Talgat on 14.07.2022.
+//  Created by Bekzhan Talgat on 15.07.2022.
 //
 
 import UIKit
 
 
-class CreateRoomViewController: UIViewController {
-    
+class WaitingRoomViewController: UIViewController {
     
     public weak var appCoordinator: AppCoordinator?
     
@@ -19,22 +18,21 @@ class CreateRoomViewController: UIViewController {
     let qrImageView: UIImageView = Images.getImageView(named: "QR")
     
     private let joinedLabel: UILabel = Labels.getPrimaryLabel(texted: "Joined:", ofSize: 36)
-    private let joinedAmountLabel: UILabel = Labels.getSecondaryLabel(texted: "1", ofSize: 36)
+    private let joinedAmountLabel: UILabel = Labels.getSecondaryLabel(texted: "2", ofSize: 36)
     
-    private lazy var startButton: UIButton = {
-        let btn = Buttons.getPrimaryButton(title: "Start")
-        btn.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
+    private let waitingLabel: UILabel = Labels.getSecondaryLabel(texted: "Waiting for admin to start", ofSize: 16)
+    
+    private lazy var quitButton: UIButton = {
+        let btn = Buttons.getSecondaryButton(title: "Quit")
+        btn.addTarget(self, action: #selector(quitButtonPressed), for: .touchUpInside)
         return btn
     }()
     
-    private lazy var cancleButton: UIButton = {
-        let btn = Buttons.getSecondaryButton(title: "Cancle")
-        btn.addTarget(self, action: #selector(cancleButtonPressed), for: .touchUpInside)
-        return btn
-    }()
+    
     
     // MARK: - - lifecycle, override
     init() {
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -52,16 +50,12 @@ class CreateRoomViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     // MARK: - - objc
-    @objc private func startButtonPressed() {
-        print("Start clicked")
-    }
     
-    @objc private func cancleButtonPressed() {
-        print("Cancle clicked")
+    @objc private func quitButtonPressed() {
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -73,10 +67,9 @@ class CreateRoomViewController: UIViewController {
         view.addSubview(roomIdLabel)
         view.addSubview(joinedLabel)
         view.addSubview(joinedAmountLabel)
-        view.addSubview(startButton)
-        view.addSubview(cancleButton)
+        view.addSubview(waitingLabel)
+        view.addSubview(quitButton)
         
-//        print(view.frame.height, view.frame.width)
         
         NSLayoutConstraint.activate([
             qrImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 64),
@@ -96,19 +89,16 @@ class CreateRoomViewController: UIViewController {
             joinedAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -64),
             joinedAmountLabel.topAnchor.constraint(equalTo: qrImageView.bottomAnchor, constant: 16),
             
-            startButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ConstraintConstants.buttonLeadingAnchors),
-            startButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: ConstraintConstants.inputFieldTrailingAnchor),
-            startButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            startButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.primaryButtonDisatnceFromCenter),
-            startButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight),
+            waitingLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            waitingLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.primaryButtonDisatnceFromCenter),
             
-            cancleButton.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: ConstraintConstants.secondaryButtonDistanceFromPrimary),
-            cancleButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ConstraintConstants.buttonLeadingAnchors),
-            cancleButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: ConstraintConstants.buttonTrailingAnchors),
-            cancleButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            cancleButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
+            quitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: ConstraintConstants.primaryButtonDisatnceFromCenter + ConstraintConstants.buttonHeight + ConstraintConstants.secondaryButtonDistanceFromPrimary),
+            quitButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: ConstraintConstants.buttonLeadingAnchors),
+            quitButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: ConstraintConstants.buttonTrailingAnchors),
+            quitButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            quitButton.heightAnchor.constraint(equalToConstant: ConstraintConstants.buttonHeight)
         ])
-        
-        
     }
+    
+    
 }

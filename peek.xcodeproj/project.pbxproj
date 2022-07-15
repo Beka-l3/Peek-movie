@@ -30,6 +30,7 @@
 		0796FA22288049BB000A3162 /* RegistrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796FA21288049BB000A3162 /* RegistrationPage.swift */; };
 		0796FA242880510E000A3162 /* JoinRoomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796FA232880510E000A3162 /* JoinRoomPage.swift */; };
 		0796FA26288053B7000A3162 /* CreateRoomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796FA25288053B7000A3162 /* CreateRoomPage.swift */; };
+		07B5F23528817D0100221348 /* WaitingRoomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B5F23428817D0100221348 /* WaitingRoomPage.swift */; };
 		07E54E90287AE504008E5F4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E54E8F287AE504008E5F4E /* AppDelegate.swift */; };
 		07E54E97287AE504008E5F4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E54E95287AE504008E5F4E /* Main.storyboard */; };
 		07E54E99287AE508008E5F4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E54E98287AE508008E5F4E /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		0796FA21288049BB000A3162 /* RegistrationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPage.swift; sourceTree = "<group>"; };
 		0796FA232880510E000A3162 /* JoinRoomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomPage.swift; sourceTree = "<group>"; };
 		0796FA25288053B7000A3162 /* CreateRoomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomPage.swift; sourceTree = "<group>"; };
+		07B5F23428817D0100221348 /* WaitingRoomPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomPage.swift; sourceTree = "<group>"; };
 		07E54E8C287AE504008E5F4E /* peek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E54E8F287AE504008E5F4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E54E96287AE504008E5F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				0796FA21288049BB000A3162 /* RegistrationPage.swift */,
 				0796FA232880510E000A3162 /* JoinRoomPage.swift */,
 				0796FA25288053B7000A3162 /* CreateRoomPage.swift */,
+				07B5F23428817D0100221348 /* WaitingRoomPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				0796FA242880510E000A3162 /* JoinRoomPage.swift in Sources */,
 				076CF7E3287AF78C008F3341 /* Room.swift in Sources */,
 				076CF7EF287B0157008F3341 /* AppCoordinator.swift in Sources */,
+				07B5F23528817D0100221348 /* WaitingRoomPage.swift in Sources */,
 				0796FA2028803A3B000A3162 /* LoginPage.swift in Sources */,
 				076CF7CF287AF488008F3341 /* NetworkClientProtocol.swift in Sources */,
 				076CF7EB287AFD61008F3341 /* NetworkService.swift in Sources */,

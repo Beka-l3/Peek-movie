@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let registrationPage = RegistrationViewController()
         let unauthorizedPage = UnauthorizedViewController(loginPage: loginPage, registrationPage: registrationPage)
         
-        let joinRoomPage = JoinRoomViewController()
+        let waitingRoomPage = WaitingRoomViewController()
+        let joinRoomPage = JoinRoomViewController(watingRoomPage: waitingRoomPage)
         let createRoomPage = CreateRoomViewController()
         let authorizedPage = AuthorizedViewController(joinRoomPage: joinRoomPage, createRoomPage: createRoomPage)
         
@@ -42,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registrationPage.appCoordinator = appCoordinator
         unauthorizedPage.appCoordinator = appCoordinator
         
+        waitingRoomPage.appCoordinator = appCoordinator
         joinRoomPage.appCoordinator = appCoordinator
         createRoomPage.appCoordinator = appCoordinator
         authorizedPage.appCoordinator = appCoordinator

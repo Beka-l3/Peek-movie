@@ -12,8 +12,9 @@ class JoinRoomViewController: UIViewController {
     
     
     public weak var appCoordinator: AppCoordinator?
+    private var waitingRoomPage: WaitingRoomViewController
     
-    private lazy var logoImageView: UIImageView = LogoImage.getLogoImageView()
+    private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
 
     private lazy var roomIdInputField: UITextField = InputFields.inputField(placeholderText: "Room Id")
     
@@ -26,7 +27,8 @@ class JoinRoomViewController: UIViewController {
     
     
     // MARK: - - lifecycle, override
-    init() {
+    init(watingRoomPage: WaitingRoomViewController) {
+        self.waitingRoomPage = watingRoomPage
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,6 +57,7 @@ class JoinRoomViewController: UIViewController {
     
     @objc private func joinButtonPressed() {
         print("Join clicked", roomIdInputField.text!)
+        self.navigationController?.pushViewController(waitingRoomPage, animated: true)
     }
     
     // MARK: - - func

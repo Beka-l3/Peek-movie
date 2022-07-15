@@ -33,11 +33,11 @@ struct ColorPalette {
 }
 
 
-struct LogoImage {
+struct Images {
     
-    static func getLogoImageView() -> UIImageView {
+    static func getImageView(named name: String) -> UIImageView {
         let iv = UIImageView()
-        iv.image = UIImage(named: "Logo")
+        iv.image = UIImage(named: name)
         iv.contentMode = .scaleAspectFill
 
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -101,5 +101,28 @@ struct InputFields {
 
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
+    }
+}
+
+struct Labels {
+    
+    static func getPrimaryLabel(texted text: String, ofSize size: CGFloat) -> UILabel {
+        let l = UILabel()
+        l.text = text
+        l.font = .systemFont(ofSize: size)
+        l.textColor = ColorPalette.customYellow
+
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }
+    
+    static func getSecondaryLabel(texted text: String, ofSize size: CGFloat) -> UILabel {
+        let l = UILabel()
+        l.text = text
+        l.font = .systemFont(ofSize: size)
+        l.textColor = ColorPalette.customWhite
+
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
     }
 }

@@ -13,7 +13,7 @@ class AuthorizedViewController: UIViewController {
     private let joinRoomPage: JoinRoomViewController
     private let createRoomPage: CreateRoomViewController
     
-    private lazy var logoImageView: UIImageView = LogoImage.getLogoImageView()
+    private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
     
     private lazy var joinButton: UIButton = {
         let btn = Buttons.getPrimaryButton(title: "Join")

@@ -9,7 +9,7 @@ import UIKit
 
 class LogoViewController: UIViewController {
     
-    private lazy var logoImageView: UIImageView = LogoImage.getLogoImageView()
+    private lazy var logoImageView: UIImageView = Images.getImageView(named: "Logo")
     
     override func viewDidLoad() {
         super.viewDidLoad()
